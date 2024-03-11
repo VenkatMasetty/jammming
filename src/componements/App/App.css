@@ -1,47 +1,71 @@
-body,
-html,
-#root {
+/* Base setup */
+body, html, #root {
   height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #121212; /* Spotify's iconic dark background */
 }
 
 html {
-  font-size: 18px;
+  font-size: 16px; /* Responsive base font size */
 }
 
+/* Headers with a Spotify vibe */
 h1 {
-  padding: .77rem 0;
-  background-color: #010c3f;
+  padding: 1rem 0;
+  background-color: #1DB954; /* Spotify's vibrant green */
   text-align: center;
   font-family: 'Poppins', sans-serif;
-  font-size: 1.88rem;
-  color: #fff;
+  font-size: 2rem;
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 h1 .highlight {
-  color: #6c41ec;
+  color: #1a0202; /* Soft contrast for highlights */
+  text-shadow: none; /* Clean look without shadow */
 }
 
 h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.55rem;
+  font-size: 1.6rem;
+  color: #ffffff; /* Bright text for readability */
+  margin: 20px 0;
 }
 
+/* Core App styling with Spotify-themed background */
 .App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centered content */
   height: 100%;
-  padding: 0 17% 10% 17%;
-  background-image: url('./background_photo_desktop.jpg');
+  padding: 0 10%; /* Responsive padding */
+  background-image: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url('./backgroundImage.webp'); /* Overlay on a Spotify-inspired background */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   font-family: 'Work Sans', sans-serif;
   font-weight: 500;
   color: #fff;
+  animation: fadeIn 2s ease-in-out; /* Smooth fade-in effect */
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .App-playlist {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around; /* Optimal spacing */
   width: 100%;
+  animation: slideIn 1s ease-out forwards; /* Elegant slide-in animation */
+}
+
+@keyframes slideIn {
+  0% { opacity: 0; transform: translateX(-100px); }
+  100% { opacity: 1; transform: translateX(0); }
 }
 
 @media only screen and (max-width: 1020px) {
@@ -49,4 +73,29 @@ h2 {
     align-items: center;
     flex-direction: column;
   }
+}
+
+/* Interactive elements designed for Spotify-themed UI */
+button, input[type="text"] {
+  font-size: 1rem;
+  padding: 12px 20px;
+  border-radius: 30px; /* Rounded edges for a modern touch */
+  border: 1px solid #1DB954; /* Accent border */
+  background-color: transparent; /* Sleek, transparent background */
+  color: #1DB954; /* Spotify green text */
+  outline: none;
+  transition: all 0.3s ease; /* Smooth transitions */
+}
+
+button:hover, input[type="text"]:focus {
+  background-color: #1DB954;
+  color: #ffffff; /* White text for contrast on hover/focus */
+  border-color: #ffffff; /* White border for emphasis */
+}
+
+.SearchBar {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Adequate spacing between elements */
+  margin-bottom: 30px;
 }

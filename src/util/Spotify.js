@@ -1,5 +1,5 @@
 // Define constants for the Spotify client ID and the redirect URI. These are required for the OAuth process.
-const clientId = ''; // Your Spotify application's client ID.
+const clientId = '9c5ab1d9e82f4093adf1cc75258c6a90'; // Your Spotify application's client ID.
 const redirectUri = 'http://localhost:3000'; // The redirect URI after the user authorizes your app, must match the one in your Spotify dashboard.
 
 // Variable to store the user's access token once we have it.

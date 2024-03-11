@@ -1,52 +1,61 @@
 .Playlist {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: scroll;
-    width: 37%;
-    max-height: 950px;
-    padding: 2.27rem 1.16rem;
-    background-color: rgba(1, 12, 63, 0.7);
-    box-shadow: 0 4px 2px 2px #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto; /* Updated for better scroll behavior */
+  width: 37%;
+  max-height: 950px;
+  padding: 2.27rem 1.16rem;
+  background-color: rgba(0, 0, 0, 0.8); /* Darker to match Spotify's theme */
+  box-shadow: 0 4px 2px 2px #000000;
+  border-radius: 8px; /* Rounded corners */
+}
+
+.Playlist input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid #1DB954; /* Spotify green for highlight */
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.55rem;
+  color: #fff;
+  margin-bottom: 1rem; /* Space below the input */
+  padding: 0.5rem 0; /* Padding for aesthetic */
+  transition: border-color 0.25s ease-in-out; /* Smooth transition for focus */
+}
+
+.Playlist input:focus {
+  border-bottom: 2px solid #ffffff; /* White border on focus for contrast */
+}
+
+.Playlist-save {
+  cursor: pointer;
+  width: auto; /* Adjusted to fit content */
+  padding: 0.77rem 1.5rem; /* Balanced padding */
+  border-radius: 54px;
+  border-width: 0px;
+  margin-top: 1.27rem;
+  background-color: #1DB954; /* Spotify's vibrant green */
+  text-align: center;
+  font-size: 0.83rem;
+  transition: background-color 0.25s, transform 0.25s; /* Enhanced transitions */
+  color: #fff;
+  font-weight: 500;
+}
+
+.Playlist-save:hover {
+  background-color: #17a673; /* Darker green on hover */
+  transform: scale(1.05); /* Slight scale effect for interactivity */
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* Hide scrollbar for a cleaner look */
+}
+
+@media only screen and (max-width: 1020px) {
+  .Playlist {
+    width: 90%; /* More responsive for narrower viewports */
   }
-  
-  .Playlist input {
-    width: 100%;
-    border: 0;
-    outline: 0;
-    background: transparent;
-    border-bottom: 1px solid #6f6f6f;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.55rem;
-    color: #fff;
-  }
-  
-  .Playlist-save {
-    cursor: pointer;
-    width: 10rem;
-    padding: .77rem 0;
-    border-radius: 54px;
-    border-width: 0px;
-    margin-top: 1.27rem;
-    background-color: #6c41ec;
-    text-align: center;
-    font-size: .83rem;
-    transition: background-color .25s;
-    color: #fff;
-    font-weight: 500;
-  }
-  
-  .Playlist-save:hover {
-    background-color: rgba(108, 65, 233, .7);
-  }
-  
-  ::-webkit-scrollbar {
-      width: 0px;
-      background: transparent;
-  }
-  
-  @media only screen and (max-width: 1020px) {
-    .Playlist {
-      width: 90%;
-    }
-  }
+}
